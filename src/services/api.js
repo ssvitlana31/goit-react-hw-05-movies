@@ -1,16 +1,16 @@
 import axios from 'axios';
 
 const myKey = 'ca5c16e834cdc72dc821318b1c6c8c2f';
-const query = '';
+
 const movieId = '';
 
-axios.default.baseURL = 'https://api.themoviedb.org/3';
+axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 
 export const fetchBestMovies = async params => {
   const { data } = await axios.get(`/trending/all/day`, {
     params: {
       ...params,
-      key: myKey,
+      api_key: myKey,
     },
   });
   return data;
@@ -20,7 +20,7 @@ export const fetchMoviesByQuery = async params => {
   const { data } = await axios.get(`/search/movie`, {
     params: {
       ...params,
-      query: query,
+      api_key: myKey,
     },
   });
   return data;
