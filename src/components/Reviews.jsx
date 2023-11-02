@@ -14,6 +14,10 @@ const Reviews = () => {
     fetchReviews();
   }, [movieId]);
 
+  if (!reviews?.length) {
+    return <p>There are no reviews for this movie</p>;
+  }
+
   return (
     <ul>
       {reviews.map(review => (
