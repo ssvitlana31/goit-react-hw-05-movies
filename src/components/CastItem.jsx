@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { IMG } from 'pages/MovieInfo';
 
 export const CastItem = ({ actor }) => {
   return (
     <li>
-      <img
+      <IMG
         src={
           actor.profile_path
             ? `https://image.tmdb.org/t/p/w500/${actor.profile_path}`

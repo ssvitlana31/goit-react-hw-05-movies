@@ -33,4 +33,5 @@ const CastStyled = styled.ul`
   justify-content: space-between;
   grid-row-gap: 5px;
   grid-column-gap: 5px;
+  list-style: none;
 `;

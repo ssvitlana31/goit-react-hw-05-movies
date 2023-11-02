@@ -27,9 +27,7 @@ const MovieInfo = () => {
     <div>
       <GoBackStyled to={newLocation.current}>Go back</GoBackStyled>
       <div>
-        film.poster_path
         <img
-          width={300}
           src={
             film.poster_path
               ? `https://image.tmdb.org/t/p/w500/${film.poster_path}`
@@ -82,6 +80,13 @@ const InfoListStyled = styled.ul`
   display: flex;
   gap: 30px;
   margin: 0;
+  text-decoration: none;
+  list-style: none;
+`;
+export const IMG = styled.img`
+  aspect-ratio: 3/4;
+
+  object-fit: cover;
 `;
 
 const NavLinkStyled = styled(NavLink)`
@@ -92,4 +97,6 @@ const GoBackStyled = styled(Link)`
   width: fit-content;
   padding: 10px 20px;
   font-size: x-large;
+  font-weight: 600;
+  text-decoration: none;
 `;
