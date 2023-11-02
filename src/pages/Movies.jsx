@@ -33,7 +33,7 @@ const Movies = () => {
         <InputStyled
           type="text"
           name="query"
-          value={value}
+          value={value || ''}
           onChange={handleChange}
         />
         <ButtonStyled type="submit">Search</ButtonStyled>

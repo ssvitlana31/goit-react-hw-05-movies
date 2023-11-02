@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import React from 'react';
+import React, { Suspense } from 'react';
 import styled from 'styled-components';
 
 const Layout = () => {
@@ -9,7 +9,9 @@ const Layout = () => {
         <NavLinkStyled to="/">Home</NavLinkStyled>
         <NavLinkStyled to="/movies">Movies</NavLinkStyled>
       </HeaderStyled>
-      <Outlet />
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

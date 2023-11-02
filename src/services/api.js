@@ -2,8 +2,6 @@ import axios from 'axios';
 
 const myKey = 'ca5c16e834cdc72dc821318b1c6c8c2f';
 
-const movieId = '';
-
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 
 export const fetchBestMovies = async params => {
@@ -26,31 +24,29 @@ export const fetchMoviesByQuery = async params => {
   return data;
 };
 
-export const fetchInfoMovie = async params => {
+export const fetchInfoMovie = async movieId => {
   const { data } = await axios.get(`/movie/${movieId}`, {
     params: {
-      ...params,
-      movieId: movieId,
+      api_key: myKey,
     },
   });
   return data;
 };
 
-export const fetchCast = async params => {
+export const fetchCast = async movieId => {
   const { data } = await axios.get(`/movie/${movieId}/credits`, {
     params: {
-      ...params,
-      movieId: movieId,
+      api_key: myKey,
     },
   });
   return data;
 };
 
-export const fetchReviewsMovie = async params => {
+export const fetchReviewsMovie = async movieId => {
   const { data } = await axios.get(`movie/${movieId}/reviews`, {
     params: {
-      ...params,
-      movieId: movieId,
+      api_key: myKey,
+      page: 1,
     },
   });
   return data;
