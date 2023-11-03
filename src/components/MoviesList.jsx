@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 import React from 'react';
 import styled from 'styled-components';
 import { NavLinkStyled } from './Layout';
+import PropTypes from 'prop-types';
 
 const MoviesList = ({ films }) => {
   let location = useLocation();
@@ -16,6 +17,16 @@ const MoviesList = ({ films }) => {
       ))}
     </ListMovies>
   );
+};
+
+MoviesList.propTypes = {
+  films: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
 };
 
 export default MoviesList;
