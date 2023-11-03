@@ -12,8 +12,9 @@ import styled from 'styled-components';
 const MovieInfo = () => {
   const [film, setFilm] = useState({});
   const { movieId } = useParams();
-  let location = useLocation();
-  const newLocation = useRef(location.state?.from);
+  const location = useLocation();
+  console.log(location);
+  const newLocation = useRef(location.state?.from ?? '/movies');
 
   useEffect(() => {
     const fetchAboutMovie = async () => {
